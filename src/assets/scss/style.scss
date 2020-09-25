@@ -1,0 +1,150 @@
+@import './fonts';
+@import './global';
+@import './vars';
+
+#app {
+  font-family: 'Gotham Pro';
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 21px;
+  min-height: 100vh;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $greyDark;
+}
+
+.container {
+  max-width: 805px;
+  width: 100%;
+  padding: 72px 15px 27px;
+  display: flex;
+  flex-wrap: wrap;
+  &.center {
+    justify-content: center;
+  }
+}
+
+.bar {
+  max-width: 225px;
+  width: 100%;
+  min-height: 120px;
+  background: $grey;
+  color: $greyLight;
+  margin-bottom: 45px;
+  & + & {
+    margin-left: 50px;
+  }
+  &:nth-child(3n + 1) {
+    margin-left: 0;
+  }
+}
+
+.add-timer {
+  position: relative;
+  .plus-line {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &::before {
+      content: '';
+      background: $greyLight;
+      transition: background .2s ease;
+    }
+  }
+  .plus-vertical::before {
+    height: 20px;
+    width: 3px;
+  }
+  .plus-horizont::before {
+    height: 3px;
+    width: 20px;
+  }
+  &:hover {
+    .plus-line::before {
+      background: $activeBar;
+    }
+  }
+}
+
+.timer {
+  transition: all .2s ease;
+  &__time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $greyLight;
+    height: calc(50% - 0.5px);
+  }
+  &__btns{
+    height: calc(50% - 0.5px);
+    max-width: 85px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-reset {
+    width: 20px;
+    height: 20px;
+    background: $greyLight;
+  }
+  &-play {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 0 solid transparent;
+    border-left: 17px solid $greyLight;
+  }
+  &-pause {
+    width: 10px;
+    height: 20px;
+    position: relative;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background: $greyLight;
+      width: 3px;
+    }
+    &::after {
+      right: 0;
+    }
+    &::before {
+      left: 0;
+    }
+  }
+  &.active,
+  &.active:hover,
+  &:hover {
+    color: $activeBar;
+    .timer__time {
+      border-bottom: 1px solid $activeBar;
+    }
+    .timer-reset {
+      background: $activeBar;
+    }
+    .timer-play {
+      border-left: 17px solid $activeBar;
+    }
+    .timer-pause {
+      &::after,
+      &::before {
+        background: $activeBar;
+      }
+    }
+  }
+}
+
+
+@import './media';

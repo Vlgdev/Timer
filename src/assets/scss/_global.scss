@@ -1,0 +1,13 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+

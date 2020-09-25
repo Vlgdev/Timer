@@ -1,0 +1,53 @@
+@media (max-width: 1023px) {
+  .add-timer:hover {
+    .plus-line::before {
+      background: $greyLight;
+    }
+  }
+  .timer:hover {
+    color: $greyLight;
+    .timer__time {
+      border-bottom: 1px solid $greyLight;
+    }
+    .timer-reset {
+      background: $greyLight;
+    }
+    .timer-play {
+      border-left: 17px solid $greyLight;
+    }
+    .timer-pause {
+      &::after,
+      &::before {
+        background: $greyLight;
+      }
+    }
+  }
+}
+
+@media (max-width: 805px) {
+  .container {
+    max-width: 530px;
+  }
+  .bar {
+    &:nth-child(3n + 1) {
+      margin-left: 50px;
+    }
+    &:nth-child(2n + 1) {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .container {
+    max-width: 255px;
+  }
+  .bar {
+    & + & {
+      margin-left: 0;
+    }
+    &:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+  }
+}
