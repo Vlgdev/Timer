@@ -4,9 +4,9 @@
       {{ timer.time | time}}
     </div>
     <div class="timer__btns">
-      <button v-if="!timer.active" class="timer-play" @click="startTimer"></button>
-      <button v-else class="timer-pause" @click="pauseTimer"></button>
-      <button class="timer-reset" @click="resetTimer"></button>
+      <div v-if="!timer.active" class="btn timer-play" @click="startTimer"></div>
+      <div v-else class="btn timer-pause" @click="pauseTimer"></div>
+      <div class="btn timer-reset" @click="resetTimer"></div>
     </div>
   </div>
 </template>

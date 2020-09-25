@@ -1,8 +1,8 @@
 <template>
-  <button class="add-timer bar" @click="addTimer">
+  <div class="add-timer btn bar" @click="addTimer">
     <div class="plus-line plus-vertical"></div>
     <div class="plus-line plus-horizont"></div>
-  </button>
+  </div>
 </template>
 
 <script>
