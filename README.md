@@ -1,4 +1,6 @@
-# timer
+# Timer
+
+[Demo](https://vlgdev.github.io/Timer/)
 
 ## Project setup
 ```
